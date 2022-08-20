@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             }
         offersButton.setOnClickListener{
             val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("USER", enteredName)
             startActivity(intent)
         }
     }
