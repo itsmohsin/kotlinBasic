@@ -1,7 +1,9 @@
 package com.itsmohsin.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import android.widget.Button
@@ -17,15 +19,17 @@ class MainActivity : AppCompatActivity() {
             val inputField = findViewById<EditText>(R.id.etName)
             val submitButton = findViewById<Button>(R.id.btnSubmit)
             val offersButton = findViewById<Button>(R.id.btnOffers)
+            var enteredName = ""
             submitButton.setOnClickListener {
-                val enteredName = inputField.text.toString()
-                if (enteredName ==""){
+                enteredName = inputField.text.toString()
+                if (enteredName == ""){
                     offersButton.visibility = INVISIBLE
                     greetingTextView.text = ""
-                    Toast.makeText(this@MainActivity,
+                    Toast.makeText(
+                        this@MainActivity,
                         "Please Enter Your Name!",
-                        Toast.LENGTH_SHORT)
-                        .show()
+                        Toast.LENGTH_SHORT
+                    ).show()
                 } else {
                     val message = "Welcome $enteredName"
                     greetingTextView.text = message
@@ -33,5 +37,9 @@ class MainActivity : AppCompatActivity() {
                     offersButton.visibility = VISIBLE
                 }
             }
+        offersButton.setOnClickListener{
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
