@@ -64,3 +64,45 @@ fun showGreeting(name:String,city:String="London"){
 fun showGreeting(name:String, count:Int){
     println("Welcome! $name, your index is $count")
 }
+
+// Type of variable
+// Var Multiple Values
+// Val Single Values
+
+fun main(){
+    var age : Int
+//     val age : Int
+    age = 26
+    println(age)
+    
+	age = 33
+    println(age)
+    
+    age = 66
+    println(age)
+  }
+
+// Lists
+val fruits : List<String> = listOf("Banana","Apple","Mango")
+
+fun main(){
+    // println(fruits.size)
+    println("Size of the fruits is ${fruits.size}")
+    }
+
+
+// For Each Loop
+// MutableList to make update/add changes on program after decleration
+val fruits : MutableList<String> = mutableListOf("Banana","Apple","Mango")
+
+fun main(){
+    println("Size of the fruits is ${fruits.size}")
+    fruits.forEach{
+        i->println("This is $i")
+    }
+    fruits.add("Orange")
+    println("Updated Size of the fruits is ${fruits.size}")
+    fruits.forEach{
+        i->println("This is $i")
+    }
+}
