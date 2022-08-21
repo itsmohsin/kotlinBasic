@@ -47,3 +47,20 @@ fun showGreeting():Unit{
 fun showThanks(){
     println("Thank You!")
 }
+
+// Overloaded Functions
+fun main(){
+    showGreeting()
+    showGreeting("Mohsin","Bengaluru")
+    showGreeting("Khan",11)
+    
+}
+fun showGreeting(){
+    println("Welcome!")
+}
+fun showGreeting(name:String,city:String="London"){
+    println("Welcome! $name from $city")
+}
+fun showGreeting(name:String, count:Int){
+    println("Welcome! $name, your index is $count")
+}
